@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Début code : main()">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Fonction rand_nd()">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734421428017</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fonction rand_nd()">
+      <option name="closed" value="true" />
+      <created>1734593987999</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734593987999</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Début code : main()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début code : main()" />
+    <MESSAGE value="Fonction rand_nd()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fonction rand_nd()" />
   </component>
 </project>
