@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Fonction rand_nd()">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Fonction choose_difficulty()">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734593987999</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fonction choose_difficulty()">
+      <option name="closed" value="true" />
+      <created>1734594309725</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734594309725</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +133,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Début code : main()" />
     <MESSAGE value="Fonction rand_nd()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fonction rand_nd()" />
+    <MESSAGE value="Fonction choose_difficulty()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fonction choose_difficulty()" />
   </component>
 </project>
