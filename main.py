@@ -1,5 +1,5 @@
 
-from random import randint, choice
+from random import randint
 
 def rand_nb(difficulty):
     range = {1: 100, 2: 1000, 3: 10000}
