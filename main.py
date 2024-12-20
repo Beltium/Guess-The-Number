@@ -1,5 +1,6 @@
 
-from random import randint
+from random import randint, choice
+
 
 def rand_nb(difficulty):
     range = {1: 100, 2: 1000, 3: 10000}
@@ -14,19 +15,33 @@ def choose_difficulty():
     while True:
         try:
             choice = int(input("Votre choix : "))
+            if choice not in [1, 2, 3]:
+                print("Veuillez rentrez un nombre entre 1 et 3")
         except ValueError:
             print("Veuillez rentrer un nombre.")
-            continue
-        if choice not in [1, 2, 3]:
-            print("Veuillez rentrez un nombre entre 1 et 3")
             continue
         break
     attempts = {1: 30, 2: 20, 3: 10}
     range = {1: 100, 2: 1000, 3: 10000}
-    return choice,range[choice] , attempts[choice]
+    return (choice, range[choice], attempts[choice])
 
 def game():
-    return 0
+    difficulty, range, attemps = choose_difficulty()
+    gnb = rand_nb(difficulty)
+    nb = 0
+    print(f"Vous avez choisit la difficulté {difficulty}.")
+    print(f"Vous devez trouver le nombre choisi aléatoirement entre 1 et {range} et {attemps} coups maximals.")
+    while nb != gnb:
+        nb = int(input("Entrez un nombre : "))
+        if nb == gnb:
+            print("Félicitation, vous avez gagné !")
+            break
+        elif nb > gnb:
+            print("C'est moins !")
+            continue
+        elif nb < gnb:
+            print("C'est plus !")
+            continue
 
 # Fonction principale
 def main():
@@ -34,4 +49,4 @@ def main():
 
 
 if __name__ == '__main__':
-    print(choose_difficulty())
+    game()
