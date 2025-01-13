@@ -2,6 +2,7 @@
 from random import randint
 
 def rand_nb(difficulty):
+    """Nombre aléatoire en fonction de la difficulté"""
     nb_range = {1: 100, 2: 1000, 3: 10000}
     return randint(1, nb_range[difficulty])
 
@@ -28,7 +29,7 @@ def game():
     difficulty, range, attemps_max = choose_difficulty()
     gnb = rand_nb(difficulty)
     print(gnb)
-    nb, attemps = 0, 0
+    nb, attemps, score = 0, 0, 0
     print(f"Vous avez choisit la difficulté {difficulty}.")
     print(f"Vous devez trouver le nombre choisi aléatoirement entre 1 et {range} et {attemps_max} coups maximals.")
     while nb != gnb:
@@ -41,9 +42,12 @@ def game():
             break
         if nb == gnb:
             print("Félicitation, vous avez gagné !")
+            score = (attemps_max - attemps) * difficulty**3
+            return score
             break
         elif attemps_max == attemps:
             print("Vous avez perdus par manque de coups.")
+            return score
             break
         elif nb > gnb:
             print("C'est moins !")
@@ -56,8 +60,10 @@ def game():
 
 # Fonction principale
 def main():
-    print("Hello World!")
+    print("Bienvenue sur Guess The Number !")
+    pseudo = input("Entrez votre pseudo : ")
+
 
 
 if __name__ == '__main__':
-    game()
+    print(game())
