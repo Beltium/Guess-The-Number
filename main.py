@@ -2,8 +2,8 @@
 from random import randint
 
 def rand_nb(difficulty):
-    range = {1: 100, 2: 1000, 3: 10000}
-    return randint(1, range[difficulty])
+    nb_range = {1: 100, 2: 1000, 3: 10000}
+    return randint(1, nb_range[difficulty])
 
 def choose_difficulty():
     """Permet au joueur de choisir une difficulté"""
