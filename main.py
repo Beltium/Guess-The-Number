@@ -43,6 +43,7 @@ def game():
         if nb == gnb:
             print("Félicitation, vous avez gagné !")
             score = (attemps_max - attemps) * difficulty**3
+            print(f"Votre score est de {score} points.")
             return score
             break
         elif attemps_max == attemps:
@@ -61,9 +62,15 @@ def game():
 # Fonction principale
 def main():
     print("Bienvenue sur Guess The Number !")
-    pseudo = input("Entrez votre pseudo : ")
+    pseudo = str(input("Entrez votre pseudo : "))
+    score = game()
+    scores = {}
+    if score[pseudo] == None:
+        scores[pseudo] = {'scores' : [0], 'max_score' : 0}
+    scores[pseudo] = {'scores' : [score], 'max_score' : score if score > scores[pseudo][max_score] else scores[pseudo][max_score]}
+    print(scores)
 
 
 
 if __name__ == '__main__':
-    print(game())
+    main()
