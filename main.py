@@ -3,7 +3,7 @@ from random import randint
 import json
 
 def save_dict_to_json(data, path):
-    """Sauvegarde un dictionnaire dans un fichier JSON."""
+    """Sauvegarde un dictionnaire dans un fichier JSON"""
     try:
         with open(path, 'w') as file:
             json.dump(data, file, indent=5)
@@ -12,7 +12,7 @@ def save_dict_to_json(data, path):
         print(f"Erreur lors de la sauvegarde : {e}")
 
 def load_dict_from_json(path):
-    """Charge un dictionnaire depuis un fichier JSON."""
+    """Charge un dictionnaire depuis un fichier JSON"""
     try:
         with open(path, 'r') as file:
             data = json.load(file)
