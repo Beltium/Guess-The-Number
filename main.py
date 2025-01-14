@@ -1,5 +1,26 @@
 
 from random import randint
+import json
+
+def save_dict_to_json(data, path):
+    """Sauvegarde un dictionnaire dans un fichier JSON."""
+    try:
+        with open(path, 'w') as file:
+            json.dump(data, file, indent=5)
+        print(f"Données sauvegardées avec succès dans {path}.")
+    except Exception as e:
+        print(f"Erreur lors de la sauvegarde : {e}")
+
+def load_dict_from_json(path):
+    """Charge un dictionnaire depuis un fichier JSON."""
+    try:
+        with open(path, 'r') as file:
+            data = json.load(file)
+        print(f"Données chargées avec succès depuis {path}.")
+        return data
+    except Exception as e:
+        print(f"Erreur lors du chargement : {e}")
+        return None
 
 def rand_nb(difficulty):
     """Nombre aléatoire en fonction de la difficulté"""

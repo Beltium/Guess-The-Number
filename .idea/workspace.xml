@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Ajout du score et stockage (pas fini)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Fix score" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736762325850</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fix score">
+      <option name="closed" value="true" />
+      <created>1736840309174</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736840309174</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +200,7 @@
     <MESSAGE value="change range to nb_range" />
     <MESSAGE value="Ajout du score" />
     <MESSAGE value="Ajout du score et stockage (pas fini)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du score et stockage (pas fini)" />
+    <MESSAGE value="Fix score" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix score" />
   </component>
 </project>
