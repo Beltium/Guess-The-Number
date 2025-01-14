@@ -65,9 +65,14 @@ def main():
     pseudo = str(input("Entrez votre pseudo : "))
     score = game()
     scores = {}
-    if score[pseudo] == None:
-        scores[pseudo] = {'scores' : [0], 'max_score' : 0}
-    scores[pseudo] = {'scores' : [score], 'max_score' : score if score > scores[pseudo][max_score] else scores[pseudo][max_score]}
+    # Vérification si le pseudo existe déjà dans le dictionnaire des scores
+    if pseudo not in scores:
+        scores[pseudo] = {'scores': [], 'max_score': 0}
+    scores[pseudo]['scores'].append(score)
+    scores[pseudo]['max_score'] = max(scores[pseudo]['max_score'], score)
+
+    print(f"Scores de {pseudo} : {scores[pseudo]['scores']}")
+    print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
     print(scores)
 
 
