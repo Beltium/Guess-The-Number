@@ -2,7 +2,10 @@
 from random import randint
 import json
 
-def save_dict_to_json(data, path):
+# Paramètre
+path_file = "scores.json"
+
+def save_dict_to_json(data, path = path_file):
     """Sauvegarde un dictionnaire dans un fichier JSON"""
     try:
         with open(path, 'w') as file:
@@ -11,7 +14,7 @@ def save_dict_to_json(data, path):
     except Exception as e:
         print(f"Erreur lors de la sauvegarde : {e}")
 
-def load_dict_from_json(path):
+def load_dict_from_json(path = path_file):
     """Charge un dictionnaire depuis un fichier JSON"""
     try:
         with open(path, 'r') as file:
