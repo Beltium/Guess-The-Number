@@ -23,7 +23,7 @@ def load_dict_from_json(path = path_file):
         return data
     except Exception as e:
         print(f"Erreur lors du chargement : {e}")
-        return None
+        return {}
 
 def rand_nb(difficulty):
     """Nombre aléatoire en fonction de la difficulté"""
@@ -85,20 +85,22 @@ def game():
 
 # Fonction principale
 def main():
+    scores = load_dict_from_json()
     print("Bienvenue sur Guess The Number !")
     pseudo = str(input("Entrez votre pseudo : "))
     score = game()
-    scores = {}
     # Vérification si le pseudo existe déjà dans le dictionnaire des scores
     if pseudo not in scores:
         scores[pseudo] = {'scores': [], 'max_score': 0}
+    else:
+        print(f"Scores de {pseudo} : {scores[pseudo]['scores']}")
+        print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
+
     scores[pseudo]['scores'].append(score)
     scores[pseudo]['max_score'] = max(scores[pseudo]['max_score'], score)
 
-    print(f"Scores de {pseudo} : {scores[pseudo]['scores']}")
-    print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
     print(scores)
-
+    save_dict_to_json(scores)
 
 
 if __name__ == '__main__':
