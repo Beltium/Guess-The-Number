@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="'perdu' si score = 0">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="get_valid_input" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +225,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737012937535</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Rejouer + get_valid_input()">
+      <option name="closed" value="true" />
+      <created>1737013380359</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1737013380359</updated>
+    </task>
+    <task id="LOCAL-00020" summary="rejouer">
+      <option name="closed" value="true" />
+      <created>1737013621755</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1737013621755</updated>
+    </task>
+    <task id="LOCAL-00021" summary="get_valid_input">
+      <option name="closed" value="true" />
+      <created>1737013766508</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1737013766508</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,6 +277,9 @@
     <MESSAGE value="scores.json" />
     <MESSAGE value="Réorganization du code" />
     <MESSAGE value="'perdu' si score = 0" />
-    <option name="LAST_COMMIT_MESSAGE" value="'perdu' si score = 0" />
+    <MESSAGE value="Rejouer + get_valid_input()" />
+    <MESSAGE value="rejouer" />
+    <MESSAGE value="get_valid_input" />
+    <option name="LAST_COMMIT_MESSAGE" value="get_valid_input" />
   </component>
 </project>
