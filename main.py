@@ -99,7 +99,7 @@ def main():
     score = game()
     scores = update_scores(scores, pseudo, score)
 
-    print(f"Scores de {pseudo} : {scores[pseudo]['scores']}")
+    print(f"Scores de {pseudo} : {', '.join(str(score) if score != 0 else 'perdu' for score in scores[pseudo]['scores'])}")
     print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
     save_dict_to_json(scores)
 
