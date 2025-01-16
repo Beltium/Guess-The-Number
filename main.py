@@ -33,7 +33,7 @@ def get_valid_input(prompt, valid_options):
             if user_input in valid_options:
                 return user_input
             else:
-                print(f"Veuillez entrer un nombre parmi {valid_options}.")
+                print(f"Veuillez entrer un nombre parmi {', '.join(map(str, valid_options))}.")
         except ValueError:
             print("Veuillez entrer un nombre entier.")
 

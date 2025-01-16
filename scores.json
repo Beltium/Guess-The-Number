@@ -1,0 +1,19 @@
+{
+     "Beltium": {
+          "scores": [
+               270,
+               29,
+               30
+          ],
+          "max_score": 270
+     },
+     "Notch": {
+          "scores": [
+               30,
+               29,
+               0,
+               270
+          ],
+          "max_score": 270
+     }
+}
