@@ -109,14 +109,14 @@ def main():
         print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
         save_dict_to_json(scores)
 
-        c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0)", [1, 2, 0])
+        c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0) ", [1, 2, 0])
         match c:
-            case '1':
+            case 1:
                 continue
-            case '2':
+            case 2:
                 pseudo = input("Entrez votre pseudo : ")
                 continue
-            case '0':
+            case 0:
                 break
 
 
