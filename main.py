@@ -25,6 +25,19 @@ def load_dict_from_json(path = path_file):
         print(f"Erreur lors du chargement : {e}")
         return {}
 
+def get_valid_input(prompt, valid_options):
+    """Récupère une entrée valide de l'utilisateur."""
+    while True:
+        try:
+            user_input = int(input(prompt))
+            if user_input in valid_options:
+                return user_input
+            else:
+                print(f"Veuillez entrer un nombre parmi {valid_options}.")
+        except ValueError:
+            print("Veuillez entrer un nombre entier.")
+
+
 def update_scores(scores, pseudo, score):
     """Met à jour les scores du joueur."""
     if pseudo not in scores:
@@ -44,15 +57,7 @@ def choose_difficulty():
     print("1. Facile (1-100, 30 coups)")
     print("2. Moyen (1-1000, 20 coups)")
     print("3. Difficile (1-10000, 10 coups)")
-    while True:
-        try:
-            choice = int(input("Votre choix : "))
-            if choice not in [1, 2, 3]:
-                print("Veuillez rentrez un nombre entre 1 et 3")
-        except ValueError:
-            print("Veuillez rentrer un nombre.")
-            continue
-        break
+    choice = get_valid_input("Votre choix : ", [1, 2, 3])
     attempts = {1: 30, 2: 20, 3: 10}
     range = {1: 100, 2: 1000, 3: 10000}
     return (choice, range[choice], attempts[choice])
@@ -96,12 +101,24 @@ def main():
     scores = load_dict_from_json()
     print("Bienvenue sur Guess The Number !")
     pseudo = input("Entrez votre pseudo : ")
-    score = game()
-    scores = update_scores(scores, pseudo, score)
+    while True:
+        score = game()
+        scores = update_scores(scores, pseudo, score)
 
-    print(f"Scores de {pseudo} : {', '.join(str(score) if score != 0 else 'perdu' for score in scores[pseudo]['scores'])}")
-    print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
-    save_dict_to_json(scores)
+        print(f"Scores de {pseudo} : {', '.join(str(score) if score != 0 else 'perdu' for score in scores[pseudo]['scores'])}")
+        print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
+        save_dict_to_json(scores)
+
+        c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0)", [1, 2, 0])
+        match c:
+            case '1':
+                continue
+            case '2':
+                pseudo = input("Entrez votre pseudo : ")
+                continue
+            case '0':
+                break
+
 
 
 if __name__ == '__main__':
