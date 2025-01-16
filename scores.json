@@ -2,8 +2,15 @@
      "Beltium": {
           "scores": [
                30,
-               160
+               160,
+               144
           ],
           "max_score": 160
+     },
+     "Notch": {
+          "scores": [
+               270
+          ],
+          "max_score": 270
      }
 }

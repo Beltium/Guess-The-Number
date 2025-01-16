@@ -25,6 +25,14 @@ def load_dict_from_json(path = path_file):
         print(f"Erreur lors du chargement : {e}")
         return {}
 
+def update_scores(scores, pseudo, score):
+    """Met à jour les scores du joueur."""
+    if pseudo not in scores:
+        scores[pseudo] = {'scores': [], 'max_score': 0}
+    scores[pseudo]['scores'].append(score)
+    scores[pseudo]['max_score'] = max(scores[pseudo]['max_score'], score)
+    return scores
+
 def rand_nb(difficulty):
     """Nombre aléatoire en fonction de la difficulté"""
     nb_range = {1: 100, 2: 1000, 3: 10000}
@@ -87,19 +95,12 @@ def game():
 def main():
     scores = load_dict_from_json()
     print("Bienvenue sur Guess The Number !")
-    pseudo = str(input("Entrez votre pseudo : "))
+    pseudo = input("Entrez votre pseudo : ")
     score = game()
-    # Vérification si le pseudo existe déjà dans le dictionnaire des scores
-    if pseudo not in scores:
-        scores[pseudo] = {'scores': [], 'max_score': 0}
-    else:
-        print(f"Scores de {pseudo} : {scores[pseudo]['scores']}")
-        print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
+    scores = update_scores(scores, pseudo, score)
 
-    scores[pseudo]['scores'].append(score)
-    scores[pseudo]['max_score'] = max(scores[pseudo]['max_score'], score)
-
-    print(scores)
+    print(f"Scores de {pseudo} : {scores[pseudo]['scores']}")
+    print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
     save_dict_to_json(scores)
 
 
