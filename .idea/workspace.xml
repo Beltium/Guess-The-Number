@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="get_valid_input">
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Ajout de commentaires">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +259,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737013845304</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Remplacement de 'gnb' par 'guess_nb'">
+      <option name="closed" value="true" />
+      <created>1737100194109</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1737100194109</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Ajout de commentaires">
+      <option name="closed" value="true" />
+      <created>1737100206155</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1737100206155</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +306,8 @@
     <MESSAGE value="Rejouer + get_valid_input()" />
     <MESSAGE value="rejouer" />
     <MESSAGE value="get_valid_input" />
-    <option name="LAST_COMMIT_MESSAGE" value="get_valid_input" />
+    <MESSAGE value="Remplacement de 'gnb' par 'guess_nb'" />
+    <MESSAGE value="Ajout de commentaires" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de commentaires" />
   </component>
 </project>
