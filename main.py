@@ -1,6 +1,6 @@
 
 from random import randint
-import json
+import json, csv
 
 # Paramètre
 path_file = "scores.json" # Chemin du fichier où les scores seront enregistrés
@@ -15,7 +15,6 @@ def save_dict_to_json(data, path = path_file):
     except Exception as e:
         print(f"Erreur lors de la sauvegarde : {e}")
 
-
 def load_dict_from_json(path = path_file):
     """Charge un dictionnaire depuis un fichier JSON"""
     try:
@@ -27,6 +26,18 @@ def load_dict_from_json(path = path_file):
         print(f"Erreur lors du chargement : {e}")
         return {}
 
+def save_scores_to_csv(scores, path='scores.csv'):
+    """Sauvegarde un dictionnaire dans un fichier CSV"""
+    try:
+        with open(path, 'w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Pseudo', 'Score'])
+            for pseudo, data in scores.items():
+                for i, score in enumerate(data['scores']):
+                    writer.writerow([pseudo, score])
+        print(f"Données sauvegardées avec succès dans {path}.")
+    except Exception as e:
+        print(f"Erreur lors de la sauvegarde en CSV : {e}")
 
 def get_valid_input(prompt, valid_options):
     """Récupère une entrée valide de l'utilisateur."""
