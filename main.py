@@ -156,6 +156,7 @@ def main():
         print(f"Scores de {pseudo} : {', '.join(str(score) if score != 0 else 'perdu' for score in scores[pseudo]['scores'])}")
         print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
         save_dict_to_json(scores) # Enregistrement des scores
+        save_scores_to_csv(scores)
 
         # Demande pour rejouer
         c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0) ", [1, 2, 0])
