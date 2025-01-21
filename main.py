@@ -1,5 +1,5 @@
 
-from random import randint
+from random import randint, choice
 import json, csv
 
 # Paramètre
@@ -131,29 +131,48 @@ def game():
 def main():
     """Fonction principale"""
     scores = load_data("json")
+
     print("Bienvenue sur Guess The Number !")
-    pseudo = input("Entrez votre pseudo : ")
     while True:
-        score = game() # Le jeu se lance et on récupère le score
-        scores = update_scores(scores, pseudo, score) # On l'enregistre
+        print("\n=== MENU PRINCIPAL ===")
+        print("1. Jouer")
+        print("2. Consulter les scores")
+        print("0. Quitter")
+        choice = get_valid_input("Votre choix : ", [1, 2, 0])
 
-        # Print les scores et "Perdu" si 0
-        print(f"Scores de {pseudo} : {', '.join(str(score) if score != 0 else 'perdu' for score in scores[pseudo]['scores'])}")
-        print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
-        save_data(scores, "json")
-        save_data(scores, "csv")
+        match choice:
 
-        # Demande pour rejouer
-        c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0) ", [1, 2, 0])
-        match c:
             case 1:
-                continue
-            case 2:
                 pseudo = input("Entrez votre pseudo : ")
-                continue
-            case 0:
-                break
+                while True:
+                    score = game()  # Le jeu se lance et on récupère le score
+                    scores = update_scores(scores, pseudo, score)  # On l'enregistre
 
+                    # Print les scores et "Perdu" si 0
+                    print(f"Scores de {pseudo} : {', '.join(str(score) if score != 0 else 'perdu' for score in scores[pseudo]['scores'])}")
+                    print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
+                    save_data(scores, "json")
+                    save_data(scores, "csv")
+
+                    # Demande pour rejouer
+                    c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0) ", [1, 2, 0])
+                    match c:
+                        case 1:
+                            continue
+                        case 2:
+                            pseudo = input("Entrez votre pseudo : ")
+                            continue
+                        case 0:
+                            break
+
+            case 2:
+                print("\n=== TABLEAU DES SCORES ===")
+                for pseudo, data in scores.items():  # Afficher les scores de chaque joueur
+                    print(f"\n{pseudo} : \nMeilleur score : {data['max_score']} \nTous les scores : {', '.join(str(score) if score != 0 else 'perdu' for score in data['scores'])}")
+
+            case 0:
+                print("Merci d'avoir joué. À bientôt !")
+                break  # Quitter le programme
 
 
 # Lancement de la fonction principale

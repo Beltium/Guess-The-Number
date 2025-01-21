@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="commentaires" />
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="scores update">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -375,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737444664285</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="scores update">
+      <option name="closed" value="true" />
+      <created>1737444778244</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1737444778244</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -393,7 +403,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Début code : main()" />
     <MESSAGE value="Fonction rand_nd()" />
     <MESSAGE value="Fonction choose_difficulty()" />
     <MESSAGE value="Fonction game()" />
@@ -418,6 +427,7 @@
     <MESSAGE value="save and load update" />
     <MESSAGE value="scores.csv scores.json" />
     <MESSAGE value="commentaires" />
-    <option name="LAST_COMMIT_MESSAGE" value="commentaires" />
+    <MESSAGE value="scores update" />
+    <option name="LAST_COMMIT_MESSAGE" value="scores update" />
   </component>
 </project>
