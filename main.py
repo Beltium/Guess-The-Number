@@ -1,5 +1,5 @@
 
-from random import randint, choice
+from random import randint
 import json, csv
 
 # Paramètre
@@ -27,12 +27,12 @@ def save_data(data, file_format, path=path_file):
 def load_data(file_format, path=path_file):
     """Charge des données depuis un fichier JSON ou CSV."""
     path = f"{path}.{file_format}" # Chemin au complet
+    data = {}
     try:
         if file_format == "json":
             with open(path, 'r') as file:
                 data = json.load(file) # Lecture JSON
         elif file_format == "csv":
-            data = {}
             with open(path, 'r', encoding='utf-8') as file:
                 reader = csv.reader(file)
                 next(reader)  # Ignore l'en-tête
@@ -112,16 +112,17 @@ def game():
             score = (attemps_max - attemps) * difficulty**3
             print(f"Votre score est de {score} points.")
             return score
-            break
+
         elif attemps_max == attemps:
             # Plus d'attemps => Perdu (score de 0)
             print("Vous avez perdus par manque de coups.")
             return score
-            break
+
         elif nb > guess_nb:
             print("C'est moins !")
             attemps +=1
             continue
+
         elif nb < guess_nb:
             print("C'est plus !")
             attemps += 1
@@ -166,11 +167,14 @@ def main():
                     c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0) ", [1, 2, 0])
                     match c:
                         case 1:
+                            # Relance le jeu
                             continue
                         case 2:
+                            # Change de pseudo et relance le jeu
                             pseudo = input("Entrez votre pseudo : ")
                             continue
                         case 0:
+                            # Quitter
                             break
 
             case 2:
