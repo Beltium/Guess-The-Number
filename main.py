@@ -39,6 +39,28 @@ def save_scores_to_csv(scores, path='scores.csv'):
     except Exception as e:
         print(f"Erreur lors de la sauvegarde en CSV : {e}")
 
+def load_scores_from_csv(path='scores.csv'):
+    """Charge un dictionnaire depuis un fichier CSV"""
+    scores = {}
+    try:
+        with open(path, 'r', encoding='utf-8') as file:
+            reader = csv.reader(file)
+            next(reader)  # Ignore l'en-tête
+            for row in reader:
+                pseudo, score = row
+                score = int(score)  # Convertir le score en entier
+                if pseudo not in scores:
+                    scores[pseudo] = {'scores': [], 'max_score': 0}
+                scores[pseudo]['scores'].append(score)
+                scores[pseudo]['max_score'] = max(scores[pseudo]['max_score'], score)
+
+        print(f"Données chargées avec succès depuis {path}.")
+    except Exception as e:
+        print(f"Erreur lors du chargement en CSV : {e}")
+
+    return scores
+
+
 def get_valid_input(prompt, valid_options):
     """Récupère une entrée valide de l'utilisateur."""
     while True:
