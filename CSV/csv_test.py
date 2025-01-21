@@ -4,11 +4,10 @@ def save_scores_to_csv(scores, path='scores.csv'):
     try:
         with open(path, 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(['Pseudo', 'Score', 'Statut'])
+            writer.writerow(['Pseudo', 'Score'])
             for pseudo, data in scores.items():
                 for i, score in enumerate(data['scores']):
-                    statut = 'Gagné' if score > 0 else 'Perdu'
-                    writer.writerow([pseudo, score, statut])
+                    writer.writerow([pseudo, score])
         print(f"Données sauvegardées avec succès dans {path}.")
     except Exception as e:
         print(f"Erreur lors de la sauvegarde en CSV : {e}")
@@ -18,23 +17,13 @@ scores = {'Beltium': {'scores': [270, 29, 30], 'max_score': 270}, 'Notch': {'sco
 save_scores_to_csv(scores)
 
 def load_scores_from_csv(path='scores.csv'):
-    """
-    Charge les scores depuis un fichier CSV et reconstruit le dictionnaire d'origine.
-
-    Args:
-        path (str): Chemin du fichier CSV à lire (par défaut 'scores.csv').
-
-    Returns:
-        dict: Dictionnaire contenant les scores et le score maximum pour chaque joueur.
-    """
     scores = {}
     try:
         with open(path, 'r', encoding='utf-8') as file:
             reader = csv.reader(file)
             next(reader)  # Ignore l'en-tête
-
             for row in reader:
-                pseudo, score, statut = row
+                pseudo, score = row
                 score = int(score)  # Convertir le score en entier
 
                 # Ajouter le pseudo dans le dictionnaire si nécessaire
