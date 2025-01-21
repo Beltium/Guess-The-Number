@@ -146,7 +146,7 @@ def main():
         print("1. Jouer")
         print("2. Consulter les scores")
         print("0. Quitter")
-        choice = get_valid_input("Votre choix : ", [1, 2, 0])
+        choice = get_valid_input("Votre choix : (1/2/0) ", [1, 2, 0])
 
         match choice:
 
