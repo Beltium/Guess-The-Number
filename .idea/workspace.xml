@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="add csv to git">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/scores.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scores.json" beforeDir="false" afterPath="$PROJECT_DIR$/scores.json" afterDir="false" />
-    </list>
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="commentaires" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -355,7 +351,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737443948419</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="save and load update">
+      <option name="closed" value="true" />
+      <created>1737444406932</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1737444406932</updated>
+    </task>
+    <task id="LOCAL-00034" summary="scores.csv scores.json">
+      <option name="closed" value="true" />
+      <created>1737444419926</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1737444419926</updated>
+    </task>
+    <task id="LOCAL-00035" summary="commentaires">
+      <option name="closed" value="true" />
+      <created>1737444664285</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1737444664285</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -373,7 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit" />
     <MESSAGE value="Début code : main()" />
     <MESSAGE value="Fonction rand_nd()" />
     <MESSAGE value="Fonction choose_difficulty()" />
@@ -396,6 +415,9 @@
     <MESSAGE value="load_scores_from_csv" />
     <MESSAGE value="path_file" />
     <MESSAGE value="add csv to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="add csv to git" />
+    <MESSAGE value="save and load update" />
+    <MESSAGE value="scores.csv scores.json" />
+    <MESSAGE value="commentaires" />
+    <option name="LAST_COMMIT_MESSAGE" value="commentaires" />
   </component>
 </project>
