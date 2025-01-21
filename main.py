@@ -5,64 +5,49 @@ import json, csv
 # Paramètre
 path_file = "scores" # Chemin du fichier où les scores seront enregistrés
 
-def save_dict_to_json(data, path = path_file):
-    """Sauvegarde un dictionnaire dans un fichier JSON"""
-    path = path + ".json"
+def save_data(data, file_format, path=path_file):
+    """Sauvegarde des données dans un fichier JSON ou CSV."""
+    path = f"{path}.{file_format}"
     try:
-
-        with open(path, 'w') as file:
-            json.dump(data, file, indent=5) # Sauvegarde les données formatées
+        if file_format == "json":
+            with open(path, 'w') as file:
+                json.dump(data, file, indent=5)
+        elif file_format == "csv":
+            with open(path, 'w', newline='', encoding='utf-8') as file:
+                writer = csv.writer(file)
+                writer.writerow(['Pseudo', 'Score'])
+                for pseudo, data in data.items():
+                    for score in data['scores']:
+                        writer.writerow([pseudo, score])
         print(f"Données sauvegardées avec succès dans {path}.")
     except Exception as e:
         print(f"Erreur lors de la sauvegarde : {e}")
 
-def load_dict_from_json(path = path_file):
-    """Charge un dictionnaire depuis un fichier JSON"""
-    path = path + ".json"
+
+def load_data(file_format, path=path_file):
+    """Charge des données depuis un fichier JSON ou CSV."""
+    path = f"{path}.{file_format}"
     try:
-        with open(path, 'r') as file:
-            data = json.load(file) # Charge les données et renvoie le disctionnaire
+        if file_format == "json":
+            with open(path, 'r') as file:
+                data = json.load(file)
+        elif file_format == "csv":
+            data = {}
+            with open(path, 'r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                next(reader)  # Ignore l'en-tête
+                for row in reader:
+                    pseudo, score = row
+                    score = int(score)
+                    if pseudo not in data:
+                        data[pseudo] = {'scores': [], 'max_score': 0}
+                    data[pseudo]['scores'].append(score)
+                    data[pseudo]['max_score'] = max(data[pseudo]['max_score'], score)
         print(f"Données chargées avec succès depuis {path}.")
         return data
     except Exception as e:
         print(f"Erreur lors du chargement : {e}")
         return {}
-
-def save_scores_to_csv(scores, path=path_file):
-    """Sauvegarde un dictionnaire dans un fichier CSV"""
-    path = path + ".csv"
-    try:
-        with open(path, 'w', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            writer.writerow(['Pseudo', 'Score'])
-            for pseudo, data in scores.items():
-                for i, score in enumerate(data['scores']):
-                    writer.writerow([pseudo, score])
-        print(f"Données sauvegardées avec succès dans {path}.")
-    except Exception as e:
-        print(f"Erreur lors de la sauvegarde en CSV : {e}")
-
-def load_scores_from_csv(path=path_file):
-    """Charge un dictionnaire depuis un fichier CSV"""
-    path = path + ".csv"
-    scores = {}
-    try:
-        with open(path, 'r', encoding='utf-8') as file:
-            reader = csv.reader(file)
-            next(reader)  # Ignore l'en-tête
-            for row in reader:
-                pseudo, score = row
-                score = int(score)  # Convertir le score en entier
-                if pseudo not in scores:
-                    scores[pseudo] = {'scores': [], 'max_score': 0}
-                scores[pseudo]['scores'].append(score)
-                scores[pseudo]['max_score'] = max(scores[pseudo]['max_score'], score)
-
-        print(f"Données chargées avec succès depuis {path}.")
-    except Exception as e:
-        print(f"Erreur lors du chargement en CSV : {e}")
-
-    return scores
 
 
 def get_valid_input(prompt, valid_options):
@@ -145,7 +130,7 @@ def game():
 
 def main():
     """Fonction principale"""
-    scores = load_dict_from_json()
+    scores = load_data("json")
     print("Bienvenue sur Guess The Number !")
     pseudo = input("Entrez votre pseudo : ")
     while True:
@@ -155,8 +140,8 @@ def main():
         # Print les scores et "Perdu" si 0
         print(f"Scores de {pseudo} : {', '.join(str(score) if score != 0 else 'perdu' for score in scores[pseudo]['scores'])}")
         print(f"Meilleur score de {pseudo} : {scores[pseudo]['max_score']}")
-        save_dict_to_json(scores) # Enregistrement des scores
-        save_scores_to_csv(scores)
+        save_data(scores, "json")
+        save_data(scores, "csv")
 
         # Demande pour rejouer
         c = get_valid_input("Voulez-vous rejouer, changer de joueur ou arréter ? (1/2/0) ", [1, 2, 0])
