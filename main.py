@@ -3,12 +3,13 @@ from random import randint
 import json, csv
 
 # Paramètre
-path_file = "scores.json" # Chemin du fichier où les scores seront enregistrés
-
+path_file = "scores" # Chemin du fichier où les scores seront enregistrés
 
 def save_dict_to_json(data, path = path_file):
     """Sauvegarde un dictionnaire dans un fichier JSON"""
+    path = path + ".json"
     try:
+
         with open(path, 'w') as file:
             json.dump(data, file, indent=5) # Sauvegarde les données formatées
         print(f"Données sauvegardées avec succès dans {path}.")
@@ -17,6 +18,7 @@ def save_dict_to_json(data, path = path_file):
 
 def load_dict_from_json(path = path_file):
     """Charge un dictionnaire depuis un fichier JSON"""
+    path = path + ".json"
     try:
         with open(path, 'r') as file:
             data = json.load(file) # Charge les données et renvoie le disctionnaire
@@ -26,8 +28,9 @@ def load_dict_from_json(path = path_file):
         print(f"Erreur lors du chargement : {e}")
         return {}
 
-def save_scores_to_csv(scores, path='scores.csv'):
+def save_scores_to_csv(scores, path=path_file):
     """Sauvegarde un dictionnaire dans un fichier CSV"""
+    path = path + ".csv"
     try:
         with open(path, 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
@@ -39,8 +42,9 @@ def save_scores_to_csv(scores, path='scores.csv'):
     except Exception as e:
         print(f"Erreur lors de la sauvegarde en CSV : {e}")
 
-def load_scores_from_csv(path='scores.csv'):
+def load_scores_from_csv(path=path_file):
     """Charge un dictionnaire depuis un fichier CSV"""
+    path = path + ".csv"
     scores = {}
     try:
         with open(path, 'r', encoding='utf-8') as file:
