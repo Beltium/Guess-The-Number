@@ -7,15 +7,15 @@ path_file = "scores" # Chemin du fichier où les scores seront enregistrés
 
 def save_data(data, file_format, path=path_file):
     """Sauvegarde des données dans un fichier JSON ou CSV."""
-    path = f"{path}.{file_format}"
+    path = f"{path}.{file_format}" # Chemin au complet
     try:
         if file_format == "json":
             with open(path, 'w') as file:
-                json.dump(data, file, indent=5)
+                json.dump(data, file, indent=5) # Enregistrement dans le JSON
         elif file_format == "csv":
             with open(path, 'w', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
-                writer.writerow(['Pseudo', 'Score'])
+                writer.writerow(['Pseudo', 'Score']) # En-tête
                 for pseudo, data in data.items():
                     for score in data['scores']:
                         writer.writerow([pseudo, score])
@@ -26,11 +26,11 @@ def save_data(data, file_format, path=path_file):
 
 def load_data(file_format, path=path_file):
     """Charge des données depuis un fichier JSON ou CSV."""
-    path = f"{path}.{file_format}"
+    path = f"{path}.{file_format}" # Chemin au complet
     try:
         if file_format == "json":
             with open(path, 'r') as file:
-                data = json.load(file)
+                data = json.load(file) # Lecture JSON
         elif file_format == "csv":
             data = {}
             with open(path, 'r', encoding='utf-8') as file:
@@ -39,10 +39,10 @@ def load_data(file_format, path=path_file):
                 for row in reader:
                     pseudo, score = row
                     score = int(score)
-                    if pseudo not in data:
+                    if pseudo not in data: # Vérifier que le pseudo n'y est pas déjà
                         data[pseudo] = {'scores': [], 'max_score': 0}
-                    data[pseudo]['scores'].append(score)
-                    data[pseudo]['max_score'] = max(data[pseudo]['max_score'], score)
+                    data[pseudo]['scores'].append(score) # Ajout des scores dans la liste 'score'
+                    data[pseudo]['max_score'] = max(data[pseudo]['max_score'], score) # Score max
         print(f"Données chargées avec succès depuis {path}.")
         return data
     except Exception as e:
