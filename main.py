@@ -1,6 +1,7 @@
 
-from random import randint
+# Import des modules
 import json, csv
+from random import randint
 
 # Paramètre
 path_file = "scores" # Chemin du fichier où les scores seront enregistrés
