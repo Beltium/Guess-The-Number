@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="README Update" />
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="scores update">
+      <change beforePath="$PROJECT_DIR$/.idea/Guess The Number.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Guess The Number.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/scores.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores.json" beforeDir="false" afterPath="$PROJECT_DIR$/scores.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,9 +39,6 @@
     &quot;accountId&quot;: &quot;3760a90d-faaa-4e05-9532-633bd425af65&quot;
   }
 }</component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -48,7 +52,6 @@
   &quot;keyToString&quot;: {
     &quot;Python.csv_test.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
@@ -86,7 +89,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
       </set>
     </attachedChunks>
   </component>
@@ -387,47 +390,7 @@
       <option name="project" value="LOCAL" />
       <updated>1737444778244</updated>
     </task>
-    <task id="LOCAL-00037" summary="ASCII Art Title">
-      <option name="closed" value="true" />
-      <created>1737492854955</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1737492854955</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Choice">
-      <option name="closed" value="true" />
-      <created>1737493124439</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1737493124439</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Modifications mineures">
-      <option name="closed" value="true" />
-      <created>1737493414412</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1737493414412</updated>
-    </task>
-    <task id="LOCAL-00040" summary="scores.csv scores.json">
-      <option name="closed" value="true" />
-      <created>1737493429407</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1737493429407</updated>
-    </task>
-    <task id="LOCAL-00041" summary="README Update">
-      <option name="closed" value="true" />
-      <created>1737493624887</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1737493624887</updated>
-    </task>
-    <option name="localTasksCounter" value="42" />
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -445,6 +408,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fonction rand_nd()" />
+    <MESSAGE value="Fonction choose_difficulty()" />
+    <MESSAGE value="Fonction game()" />
+    <MESSAGE value="change range to nb_range" />
     <MESSAGE value="Ajout du score" />
     <MESSAGE value="Ajout du score et stockage (pas fini)" />
     <MESSAGE value="Fix score" />
@@ -463,13 +430,9 @@
     <MESSAGE value="path_file" />
     <MESSAGE value="add csv to git" />
     <MESSAGE value="save and load update" />
+    <MESSAGE value="scores.csv scores.json" />
     <MESSAGE value="commentaires" />
     <MESSAGE value="scores update" />
-    <MESSAGE value="ASCII Art Title" />
-    <MESSAGE value="Choice" />
-    <MESSAGE value="Modifications mineures" />
-    <MESSAGE value="scores.csv scores.json" />
-    <MESSAGE value="README Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="README Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="scores update" />
   </component>
 </project>
