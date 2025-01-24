@@ -101,6 +101,7 @@ def load_data(file_format, path=path_file):
 def get_valid_input(prompt, valid_options):
     """
     Demande une entrée utilisateur valide parmi les options données.
+    Cette fonction réessaie tant qu'une entrée valide n'est pas fournie.
 
     Args:
         prompt (str): Le message affiché à l'utilisateur.
