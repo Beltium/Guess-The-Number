@@ -6,8 +6,19 @@ from random import randint
 # Paramètre
 path_file = "scores" # Chemin du fichier où les scores seront enregistrés
 
+
 def save_data(data, file_format, path=path_file):
-    """Sauvegarde des données dans un fichier JSON ou CSV."""
+    """
+    Sauvegarde les données dans un fichier JSON ou CSV.
+
+    Args:
+        data (dict): Les données à sauvegarder.
+        file_format (str): Le format du fichier ('json' ou 'csv').
+        path (str): Le chemin du fichier sans extension (par défaut `path_file`).
+
+    Raises:
+        Exception: En cas d'erreur lors de la sauvegarde des données.
+    """
     path = f"{path}.{file_format}" # Chemin au complet
     try:
         if file_format == "json":
@@ -26,7 +37,19 @@ def save_data(data, file_format, path=path_file):
 
 
 def load_data(file_format, path=path_file):
-    """Charge des données depuis un fichier JSON ou CSV."""
+    """
+    Charge les données depuis un fichier JSON ou CSV.
+
+    Args:
+        file_format (str): Le format du fichier à charger ('json' ou 'csv').
+        path (str): Le chemin du fichier sans extension (par défaut `path_file`).
+
+    Returns:
+        dict: Les données chargées.
+
+    Raises:
+        Exception: En cas d'erreur lors du chargement des données.
+    """
     path = f"{path}.{file_format}" # Chemin au complet
     data = {}
     try:
@@ -52,7 +75,16 @@ def load_data(file_format, path=path_file):
 
 
 def get_valid_input(prompt, valid_options):
-    """Récupère une entrée valide de l'utilisateur."""
+    """
+    Demande une entrée utilisateur valide parmi les options données.
+
+    Args:
+        prompt (str): Le message affiché à l'utilisateur.
+        valid_options (list): Les options valides (nombres entiers).
+
+    Returns:
+        int: L'option choisie par l'utilisateur.
+    """
     while True:
         try:
             user_input = int(input(prompt))
@@ -65,7 +97,17 @@ def get_valid_input(prompt, valid_options):
 
 
 def update_scores(scores, pseudo, score):
-    """Met à jour les scores du joueur."""
+    """
+    Met à jour les scores d'un joueur dans le dictionnaire.
+
+    Args:
+        scores (dict): Le dictionnaire des scores existants.
+        pseudo (str): Le pseudo du joueur.
+        score (int): Le score à ajouter.
+
+    Returns:
+        dict: Le dictionnaire des scores mis à jour.
+    """
     if pseudo not in scores:
         scores[pseudo] = {'scores': [], 'max_score': 0} # Si joueur inconnu, mettre score à 0
     scores[pseudo]['scores'].append(score) # Rajouter score à la liste
@@ -74,13 +116,26 @@ def update_scores(scores, pseudo, score):
 
 
 def rand_nb(difficulty):
-    """Nombre aléatoire en fonction de la difficulté"""
+    """
+    Génère un nombre aléatoire en fonction de la difficulté.
+
+    Args:
+        difficulty (int): Le niveau de difficulté (1, 2 ou 3).
+
+    Returns:
+        int: Un nombre aléatoire entre 1 et la plage définie par la difficulté.
+    """
     nb_range = {1: 100, 2: 1000, 3: 10000}
     return randint(1, nb_range[difficulty])
 
 
 def choose_difficulty():
-    """Permet au joueur de choisir une difficulté"""
+    """
+    Permet au joueur de choisir une difficulté.
+
+    Returns:
+        tuple: La difficulté choisie (int), la plage de nombres (int), et le nombre maximal d'essais (int).
+    """
     print("\n=== CHOISISSEZ UNE DIFFICULTÉ ===")
     print("1. Facile (1-100, 30 coups)")
     print("2. Moyen (1-1000, 20 coups)")
@@ -92,7 +147,12 @@ def choose_difficulty():
 
 
 def game():
-    """Fonction principal du jeu"""
+    """
+    Lance une partie.
+
+    Returns:
+        int: Le score obtenu par le joueur.
+    """
     difficulty, range, attemps_max = choose_difficulty() # Choix de difficulté
     guess_nb = rand_nb(difficulty) # Nombre à deviner
     print(guess_nb) # Debug
@@ -131,7 +191,9 @@ def game():
 
 
 def main():
-    """Fonction principale"""
+    """
+    Fonction principale qui gère le menu du jeu et les interactions utilisateur.
+    """
     scores = load_data("json")
 
     print("""      ______                                                ________  __                        __    __                          __
