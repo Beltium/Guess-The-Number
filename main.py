@@ -13,6 +13,10 @@ Fonctionnalités :
 - Consultation des scores enregistrés par pseudo.
 - Gestion du menu principal pour jouer ou consulter les scores.
 
+Paramètres :
+- `path_file` : Chemin les fichiers où les scores seront enregistréss (par défaut : "scores").
+- `default_file_format` : Format pour l'enregistrement ("json" ou "csv")
+
 Modules utilisés :
 - json
 - csv
@@ -23,9 +27,9 @@ Modules utilisés :
 import json, csv
 from random import randint
 
-# Paramètre
-path_file = "scores" # Chemin du fichier où les scores seront enregistrés
-
+# Paramètres
+path_file = "scores"  # Chemin les fichiers où les scores seront enregistrés
+file_format = "json"  # Format pour l'enregistrement ("json" ou "csv")
 
 def save_data(data, file_format, path=path_file):
     """
@@ -214,7 +218,7 @@ def main():
     """
     Fonction principale qui gère le menu du jeu et les interactions utilisateur.
     """
-    scores = load_data("json")
+    scores = load_data(file_format)
 
     print(r"""      ______                                                ________  __                        __    __                          __
      /      \                                              /        |/  |                      /  \  /  |                        /  |                          
