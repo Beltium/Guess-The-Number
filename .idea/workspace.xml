@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="scores" />
+    <list default="true" id="326e88b6-fc87-4137-872b-30b9f7d02dea" name="Changes" comment="Docstrings">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -423,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737703902518</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Docstrings">
+      <option name="closed" value="true" />
+      <created>1737704179622</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1737704179622</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -463,9 +473,9 @@
     <MESSAGE value="commentaires" />
     <MESSAGE value="scores update" />
     <MESSAGE value="GTN" />
-    <MESSAGE value="Docstrings" />
     <MESSAGE value="JSON or CSV Load Data" />
     <MESSAGE value="scores" />
-    <option name="LAST_COMMIT_MESSAGE" value="scores" />
+    <MESSAGE value="Docstrings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docstrings" />
   </component>
 </project>
