@@ -1,4 +1,24 @@
 
+"""
+Programme de Guess The Number (Juste Prix) avec gestion des scores.
+
+Ce programme permet à un ou plusieurs joueurs de jouer au GTN :
+- Le joueur choisit une difficulté et tente de deviner un nombre aléatoire.
+- Les scores sont sauvegardés et chargés depuis des fichiers JSON et CSV (au choix).
+- Les joueurs peuvent consulter leurs meilleurs scores et tous leurs scores enregistrés.
+
+Fonctionnalités :
+- Choix de la difficulté avec différents niveaux (facile, moyen, difficile).
+- Calcul et sauvegarde des scores dans des fichiers JSON et CSV.
+- Consultation des scores enregistrés par pseudo.
+- Gestion du menu principal pour jouer ou consulter les scores.
+
+Modules utilisés :
+- json
+- csv
+- random : pour générer des nombres aléatoires.
+"""
+
 # Import des modules
 import json, csv
 from random import randint
